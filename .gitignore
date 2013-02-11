@@ -1,4 +1,4 @@
 .DS_Store
 .sass-cache
-public/files
 config/config.php
+public/files
