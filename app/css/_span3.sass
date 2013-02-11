@@ -1,0 +1,33 @@
+.brown, .red
+  position: relative
+
+.brown h3,
+.red h3
+  margin: 0 10px
+  color: white
+  position: relative
+  z-index: 1
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5)
+  display: table-cell
+  vertical-align: middle
+  text-align: center
+
+.brown:after,
+.red:after
+  content: ""
+  position: absolute
+  width: 100%
+  height: 100%
+  z-index: 0
+  background: rgba(92,61,59,0.8)
+  top: 0
+  pointer-events: none
+
+.red:after
+  background: #a00
+
+.span3 h3 span
+  display: block
+  font-family: SailRegular, serif
+  text-transform: none
+  font-size: 16px

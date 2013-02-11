@@ -1,0 +1,33 @@
+h3
+  text-align: center
+  padding: 0
+  margin: 0
+
+.row>div
+  margin-bottom: 20px
+  @include transition(all 0.2s ease-out)
+
+.row>div>a
+  display: block
+  width: 100%
+  height: 100%
+
+.row>.brown>a,
+.row>.red>a
+  display: table
+
+.row>div:hover
+  box-shadow: 0 1px 9px rgba(0,0,0,0.6)
+
+.span6, .span3
+  height: 210px
+  background: rgba(0,0,0,0.1)
+
+.span2
+  height: 140px
+  background: rgba(255,255,255,0.3)
+  overflow: hidden
+  a
+    height: 100%
+    padding-top: 90px
+    @include background(linear-gradient(top, rgba(255,255,255,0) 85px, rgba(255,255,255,0.8) 130px))

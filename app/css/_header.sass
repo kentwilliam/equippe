@@ -1,0 +1,72 @@
+body
+  font-family: RawengulkDemibold, sans-serif
+  @include gradient(#E2D7CA, #CBB698)
+
+ul, ol
+  list-style-type: none
+
+li
+  display: block
+  list-style-type: nonehtml
+  height: 100%
+
+body
+  font-family: RawengulkRegular, sans-serif
+  width: 100%
+  height: 100%
+  background: #CBB698
+
+#background
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 700px
+  z-index: -1
+  @include background(linear-gradient(top, #E2D7CA, #CBB698))
+
+div, h1, h2, h3
+  line-height: 1.2em
+
+h2, h3
+  text-shadow: 0.5px 1px 0 white
+  color: rgba(51,51,51,0.8)
+  font-size: 19px
+
+a
+  color: rgba(51,51,51,0.8)
+  &:hover
+    color: rgba(51,51,51,0.8)
+    text-decoration: none
+
+.home
+  text-transform: uppercase
+
+header 
+  margin: 90px 0 10px
+
+  h1
+    background: #a00
+    color: white
+    display: inline-block
+    padding: 10px 35px 2px 31px
+    font-size: 37px
+    font-family: SailRegular, sans-serif
+    font-weight: 100
+    border-radius: 0 15px 0 15px
+    margin: 0 20px 0 0
+    text-transform: none
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5)
+
+  h2, span
+    display: inline-block
+
+  span
+    display: none
+    float: right
+
+ul, ol
+  list-style-type: none
+  margin: 0
+  padding: 0
+  overflow: hidden

@@ -1,0 +1,6 @@
+AuthType Basic
+AuthName "Arendals Bridgeklubb"
+AuthUserFile /home/aabk/.adm-arendals
+<Limit GET POST PUT>
+require valid-user
+</Limit>

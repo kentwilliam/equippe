@@ -1,0 +1,506 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+	margin:0;
+	padding:0;
+}
+
+body {
+
+	background-repeat:repeat-x;
+    background-color:#fff;
+	font-family:arial;
+    font-size:10pt;
+    color:#666;
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+
+img {
+	border:0;
+}
+
+p {
+	font-size:12px;
+	line-height:1.3;
+}
+
+td {
+    font-family:verdana;
+    font-size:11pt;
+    color:#bbb;
+
+}
+
+ol,ul {
+	list-style:none;
+}
+
+a {
+	color:#ec4630;
+}
+
+h1 {
+	font-family:'Helvetica Neue';
+	font-weight:normal;
+	font-size:20px;
+	color:#666;
+	margin-bottom:5px;
+}
+h2 {
+	font-family:'Helvetica Neue';
+	font-weight:normal;
+	font-size:12px;
+	color:white;
+	margin-bottom:3px;
+}
+
+.slogan {
+	font-size:11pt;
+	color:#ec4630;
+	margin-top:5px;
+}
+
+#menu-camera {
+	display:none;
+}
+#menu-grip {
+	display:none;
+}
+#menu-light {
+	display:none;
+}
+
+#menu ul {
+	margin:0px;
+	padding:0px;
+}
+#menu li {
+	margin-left:0px;
+	list-style-type: none;
+	margin:0px;
+	padding:0px;
+	margin-bottom:5px;
+	color:#cd7f10;
+}
+
+#menu ul.submenu {
+	margin-left:10px;
+	padding:3px;
+}
+
+#menu ul.subsubmenu {
+	margin-left:10px;
+	margin-top:5px;
+	padding:3px;
+	font-size:11px;
+}
+
+
+#menu a {
+	color:#cd7f10;
+}
+
+#cameralogo {
+	margin-bottom:30px;
+}
+#logo {
+	width:400px;
+	float:left;
+	text-align:left;
+}
+#main {
+	float:right;
+	text-align:left;
+	width:800px;
+}
+
+#menu {
+	width: 200px;
+	float:left;
+font-family:'Helvetica Neue';
+}
+
+#menu a {
+	text-decoration:none;
+	color:#cd7f10;
+}
+
+#footer {
+	clear:both;
+	font-family:'Helvetica Neue';
+	font-size:11pt;
+	text-align:center;
+}
+
+#text {
+
+	margin-top:20px;
+
+}
+
+#text p {
+	color:#666;
+}
+
+#text h1 {
+	margin-bottom:10px;
+}
+
+#textmenu {
+	margin-top: 30px;
+	background:white;
+	width:150px;
+}
+
+#textmenu a {
+	color:#aaa;
+}
+
+#textmenu h2 {
+	color:#aaa;
+	font-weight:bold;
+	margin-bottom:10px;
+}
+
+#news {
+	margin-top:50px;
+
+}
+
+
+#news h3 {
+	font-size:13px;
+	font-family:'Helvetica Neue';
+	margin-bottom:20px;
+}
+
+.news {
+	margin-top:2px;
+	margin-bottom:10px;
+	width:590px;
+}
+.newshead {
+	font-size:14px;
+	font-family:'Helvetica Neue';
+	color:#ec4630;
+}
+.newstext {
+	overflow:auto;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-bottom:2px #eee solid;
+}
+.newshead a {
+	text-decoration:none;
+}
+.newshead a:hover {
+	text-decoration:underline;
+}
+
+.newshead {
+	font-size:16px;
+	font-family:'Helvetica Neue';
+}
+.articletext {
+	border-bottom:1px #333 solid;
+	overflow:auto;
+}
+.articlehead a {
+	text-decoration:none;
+}
+.articlehead a:hover {
+	text-decoration:underline;
+}
+
+.box {
+	padding-top:43px;
+	padding-bottom:43px;
+	text-align:center;
+	border:10px #eee solid;
+	margin-bottom:10px;
+	margin-top:1px;
+}
+.box img {
+	margin-bottom:5px;
+}
+.box p {
+	font-size:12px;
+}
+
+.box a {
+	color:#666;
+	text-decoration:none;
+}
+
+
+#menu a:hover {
+}
+
+#menucontent {
+	margin-left:10px;
+}
+
+#frontright {
+	float:right;
+	width:294px;
+	text-align:left;
+}
+
+#frontnews {
+	float:left;
+	text-align:left;
+	margin-top:10px;
+	width:550px;
+}
+
+#footer {
+	text-align:left;
+	margin-top:50px;
+	color:#555;
+	width:890px;
+	padding-top:5px;
+}
+
+
+#productmenu {
+	width:890px;
+	overflow:auto;
+}
+
+#content {
+
+	width:1000px;
+
+	margin:auto;
+	margin-top:50px;
+	text-align:left;
+}
+
+
+#releasemenu {
+	border-bottom:1px #333 solid;
+}
+
+#releasecontent {
+	padding-top:10px;
+	padding-bottom:10px;
+	text-align:left;
+}
+
+#releasecategories {
+	text-align:center;
+	padding:2px;
+	margin-top:10px;
+}
+
+#releasecategories a {
+	color:#999;
+	text-decoration:none;
+}
+
+#text {
+	color:white;
+	padding:5px;
+	padding-left:20px;
+}
+
+
+#rightcol {
+	padding-top:20px;
+	width:180px;
+	float:right;
+}
+
+
+/*
+	Slideshow
+*/
+
+#container {
+	margin-top:10px;
+	width:600px;
+	position:relative;
+	z-index:0;
+}
+
+#example {
+	width:600px;
+	height:300px;
+	position:relative;
+}
+
+
+#slides {
+	position:absolute;
+	top:15px;
+	left:4px;
+	z-index:100;
+}
+
+/*
+	Slides container
+	Important:
+	Set the width of your slides container
+	Set to display none, prevents content flash
+*/
+
+.slides_container {
+	width:600px;
+	overflow:hidden;
+	position:relative;
+	display:none;
+}
+
+/*
+	Each slide
+	Important:
+	Set the width of your slides
+	If height not specified height will be set by the slide content
+	Set to display block
+*/
+
+.slides_container a {
+	width:610px;
+	height:310px;
+	display:block;
+}
+
+.slides_container a img {
+	display:block;
+	border:5px white solid;
+}
+
+/*
+	Next/prev buttons
+*/
+
+#slides .next,#slides .prev {
+	position:absolute;
+	top:107px;
+	left:-39px;
+	width:24px;
+	height:43px;
+	display:block;
+	z-index:101;
+}
+
+#slides .next {
+	left:605px;
+}
+
+#frame {
+	position:absolute;
+	z-index:0;
+	width:608px;
+	height:308px;
+	left:0px;
+	top:11px;
+}
+
+/*
+	Pagination
+*/
+
+.pagination {
+	margin:10px auto 0;
+	width:100px;
+	display:none;
+}
+
+.pagination li {
+	float:left;
+	margin:0 1px;
+	list-style:none;
+}
+
+.pagination li a {
+	display:block;
+	width:12px;
+	height:0;
+	padding-top:12px;
+	background-image:url(../img/pagination.png);
+	background-position:0 0;
+	float:left;
+	overflow:hidden;
+}
+
+.pagination li.current a {
+	background-position:0 -12px;
+}
+
+
+/* Product View */
+
+#product {
+	margin-top:20px;
+	margin-bottom:60px;
+	width:620px;
+}
+
+#product .frame {
+	border:1px #ccc solid;
+	background:white;
+	padding:10px;
+	width:600px;
+}
+
+#product h1 {
+	margin-top:10px;
+	margin-left:10px;
+	margin-bottom:10px;
+}
+
+#product .text {
+	margin-left:10px;
+}
+
+/* Product List */
+
+#products {
+	margin-top:20px;
+	margin-bottom:60px;
+}
+#products .thumb {
+    width:60px;
+    height:60px;
+    float:left;
+    margin-right:10px;
+    border:solid 1px #333;
+}
+#products .list {
+    clear:both;
+    margin-bottom:10px;
+}
+#products .list li {
+    padding:20px;
+}
+#products li:nth-child(2n+1) {
+    background-color:rgba(0,0,0,.1);
+    border:solid 1px rgba(255,255,255,.1);
+    border-radius:10px;
+}
+#products li:nth-child(2n+1) .thumb {
+    border:solid 1px #666;
+}
+#products h4 {
+    color:#555;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+#products p {
+    font:normal 14px/1.3 'helvetica neue', helvetica, arial;
+    color:#888;
+    text-align: left;
+}
+#products a {
+	color:#888;
+	text-decoration:none;
+}
+
+#products .description {
+	margin-top:10px;
+	margin-bottom:20px;
+}
