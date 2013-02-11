@@ -77,15 +77,16 @@ a:hover {
 }
 
 /* line 42, ../../app/css/_header.sass */
-.home {
+.home .row,
+.home header {
   text-transform: uppercase;
 }
 
-/* line 45, ../../app/css/_header.sass */
+/* line 46, ../../app/css/_header.sass */
 header {
   margin: 90px 0 10px;
 }
-/* line 48, ../../app/css/_header.sass */
+/* line 49, ../../app/css/_header.sass */
 header h1 {
   background: #aa0000;
   color: white;
@@ -99,17 +100,17 @@ header h1 {
   text-transform: none;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
-/* line 61, ../../app/css/_header.sass */
+/* line 62, ../../app/css/_header.sass */
 header h2, header span {
   display: inline-block;
 }
-/* line 64, ../../app/css/_header.sass */
+/* line 65, ../../app/css/_header.sass */
 header span {
   display: none;
   float: right;
 }
 
-/* line 68, ../../app/css/_header.sass */
+/* line 69, ../../app/css/_header.sass */
 ul, ol {
   list-style-type: none;
   margin: 0;

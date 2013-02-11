@@ -133,4 +133,21 @@ function _convdate($date) {
 	return $d.".".$m.".".$y;
 }
 
+function db_fetch($query) {
+  $ret = array();
+  $result = mysql_query ($query);
+  while ($record = mysql_fetch_assoc ($result)) {
+    array_push($ret, $record);
+  }
+  return $ret;
+}
+
+function debug ($str) {
+	#$str = print_r($str, true);
+	#throw new Exception($str);
+	echo "<pre>";
+	print_r($str);
+	echo "</pre>";
+}
+
 ?>
