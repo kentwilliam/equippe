@@ -5,41 +5,24 @@
 /* line 1, ../../app/css/_header.sass */
 body {
   font-family: RawengulkDemibold, sans-serif;
-  background-color: #cbb698;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e2d7ca), to(#cbb698));
-  /* Chrome, Safari 4+ */
-  background-image: -webkit-linear-gradient(top, #e2d7ca, #cbb698);
-  /* Chrome 10+, iOS 5+, Safari 5.1+ */
-  background-image: -moz-linear-gradient(top, #e2d7ca, #cbb698);
-  /* Firefox 3.6-15 */
-  background-image: -o-linear-gradient(top, #e2d7ca, #cbb698);
-  /* Opera 11.10-12.00 */
-  background-image: linear-gradient(to bottom, #e2d7ca, #cbb698);
-  /* Firefox 16+, IE 10+, Opera 12.50+ */
-  background-repeat: repeat-x;
+  width: 100%;
+  height: 100%;
+  background: url(../gfx/bg_tile.png);
 }
 
-/* line 5, ../../app/css/_header.sass */
+/* line 7, ../../app/css/_header.sass */
 ul, ol {
   list-style-type: none;
 }
 
-/* line 8, ../../app/css/_header.sass */
+/* line 10, ../../app/css/_header.sass */
 li {
   display: block;
   list-style-type: nonehtml;
   height: 100%;
 }
 
-/* line 13, ../../app/css/_header.sass */
-body {
-  font-family: RawengulkRegular, sans-serif;
-  width: 100%;
-  height: 100%;
-  background: #cbb698;
-}
-
-/* line 19, ../../app/css/_header.sass */
+/* line 15, ../../app/css/_header.sass */
 #background {
   position: absolute;
   top: 0;
@@ -47,46 +30,46 @@ body {
   width: 100%;
   height: 700px;
   z-index: -1;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e2d7ca), color-stop(100%, #cbb698));
-  background: -webkit-linear-gradient(top, #e2d7ca, #cbb698);
-  background: -moz-linear-gradient(top, #e2d7ca, #cbb698);
-  background: -o-linear-gradient(top, #e2d7ca, #cbb698);
-  background: linear-gradient(top, #e2d7ca, #cbb698);
+  background: -webkit-gradient(radial, 50% 40%, 0, 50% 40%, 100, color-stop(0%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background: -webkit-radial-gradient(50% 40%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -moz-radial-gradient(50% 40%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -o-radial-gradient(50% 40%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+  background: radial-gradient(50% 40%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-/* line 28, ../../app/css/_header.sass */
+/* line 24, ../../app/css/_header.sass */
 div, h1, h2, h3 {
   line-height: 1.2em;
 }
 
-/* line 31, ../../app/css/_header.sass */
+/* line 27, ../../app/css/_header.sass */
 h2, h3 {
   text-shadow: 0.5px 1px 0 white;
   color: rgba(51, 51, 51, 0.8);
   font-size: 19px;
 }
 
-/* line 36, ../../app/css/_header.sass */
+/* line 32, ../../app/css/_header.sass */
 a {
   color: rgba(51, 51, 51, 0.8);
 }
-/* line 38, ../../app/css/_header.sass */
+/* line 34, ../../app/css/_header.sass */
 a:hover {
   color: rgba(51, 51, 51, 0.8);
   text-decoration: none;
 }
 
-/* line 42, ../../app/css/_header.sass */
+/* line 38, ../../app/css/_header.sass */
 .home .row,
 .home header {
   text-transform: uppercase;
 }
 
-/* line 46, ../../app/css/_header.sass */
+/* line 42, ../../app/css/_header.sass */
 header {
   margin: 90px 0 10px;
 }
-/* line 49, ../../app/css/_header.sass */
+/* line 45, ../../app/css/_header.sass */
 header h1 {
   background: #aa0000;
   color: white;
@@ -100,17 +83,17 @@ header h1 {
   text-transform: none;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
-/* line 62, ../../app/css/_header.sass */
+/* line 58, ../../app/css/_header.sass */
 header h2, header span {
   display: inline-block;
 }
-/* line 65, ../../app/css/_header.sass */
+/* line 61, ../../app/css/_header.sass */
 header span {
   display: none;
   float: right;
 }
 
-/* line 69, ../../app/css/_header.sass */
+/* line 65, ../../app/css/_header.sass */
 ul, ol {
   list-style-type: none;
   margin: 0;
