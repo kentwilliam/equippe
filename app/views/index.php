@@ -28,7 +28,7 @@
         <?php foreach ($products as $group_id => $group) { ?>
           <div class="<?php echo to_snake_case($group_index[$group_id]['navn']); ?>">
             <a class="menu_tile" data-group-id="<?php echo $group_id ?>">
-              <?php echo $group_index[$group_id]['navn']; ?>
+              <span><?php echo $group_index[$group_id]['navn']; ?></span>
             </a>
             <nav class="secondary">
               <?php foreach ($group as $subgroup_id => $subgroup) { ?>

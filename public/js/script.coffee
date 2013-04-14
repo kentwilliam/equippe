@@ -1,11 +1,13 @@
 log = (str) -> console.log str
 
 handleNavClick = (evt) ->
-  clicked = evt.target
+  clicked = evt.target.parentNode
+
+  return if $('.page_container').hasClass('home') && $(clicked.parentNode).hasClass 'logo'
 
   # Select/unselect menu items
   $('nav.primary .selected').removeClass('selected')
-  $(evt.target.parentNode).addClass('selected')
+  $(clicked.parentNode).addClass('selected')
 
   # Hide/unhide correct products
   groupId = $(clicked).attr 'data-group-id'

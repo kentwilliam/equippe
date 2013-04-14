@@ -14,7 +14,7 @@ a {
   cursor: pointer;
 }
 
-a:hover {
+:not(.selected) a:hover {
   color: #600;  
 }
 

@@ -8,9 +8,12 @@
 
   handleNavClick = function(evt) {
     var clicked, groupId;
-    clicked = evt.target;
+    clicked = evt.target.parentNode;
+    if ($('.page_container').hasClass('home') && $(clicked.parentNode).hasClass('logo')) {
+      return;
+    }
     $('nav.primary .selected').removeClass('selected');
-    $(evt.target.parentNode).addClass('selected');
+    $(clicked.parentNode).addClass('selected');
     groupId = $(clicked).attr('data-group-id');
     $('.products').addClass('hidden');
     setTimeout(function() {
