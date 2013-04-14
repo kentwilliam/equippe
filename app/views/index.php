@@ -1,74 +1,71 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/navigation.css" type="text/css">
+    <link rel="stylesheet" href="css/product.css" type="text/css">
+    <link rel="stylesheet" href="css/blog_content.css" type="text/css">
+    <script src="js/jquery-1.9.1.js"></script>
+  </head>
 
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <body>
 
-  <link href="css/main.css" media="screen, projection" rel="stylesheet" type="text/css" />
-  <script src="scripts/vendor/modernizr.min.js"></script>
-</head>
-<body class="home">
-  <!--[if lt IE 7]><p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p><![endif]-->
+    <div class="page_container home">
 
-  <div id="background"></div>
+      <nav class="contact">
+        <a href="REPLACEME">Contact us</a>
+        <a href="mailto:booking@equippe.no">booking@equippe.no</a>
+      </nav>
 
-  <div class="container">
+      <?php # Primary navigation ?>
+      <nav class="primary">
+        <div class="logo">
+          <a class="menu_tile">Equippe</a>
+        </div>
+        <?php # Groups and subgroups ?>
+        <?php foreach ($products as $group_id => $group) { ?>
+          <div class="<?php echo to_snake_case($group_index[$group_id]['navn']); ?>">
+            <a class="menu_tile" data-group-id="<?php echo $group_id ?>">
+              <?php echo $group_index[$group_id]['navn']; ?>
+            </a>
+            <nav class="secondary">
+              <?php foreach ($group as $subgroup_id => $subgroup) { ?>
+                <a data-subgroup-id="<?php echo $subgroup_id ?>"><span><?php echo $group_index[$subgroup_id]['navn'] ?></span></a>
+              <?php } ?>
+            </nav>
+          </div>
+        <?php } ?>
+      </nav>
 
-    <header>
-      <a href="/"><h1>Equippe</h1></a>
-      <h2>Film &amp; Media Production Solutions</h2>
-      <span>Stavanger Grimstad Gøteborg Aarhus</span>
-    </header>
-
-    <div class="row">
-      <div class="span6"><a href="">
-        <img src="" alt=""></a></div>
-      <div class="span3 brown"><a href="">
-        <h3>Pakkeløsninger <span>til din produksjon</span></h3></a></div>
-      <div class="span3 red"><a href="">
-        <h3>Om Equippe <span>booking &amp; kontaktinfo</span></h3></a></div>
-    </div>
-    
-    <div class="row">
-      <div class="span12">
-        <ol class="articles">
-          <li> <a href=""> <h3>Hvorfor bør du velge Red Epic til din produksjon? <span>Les nå &raquo;</span></h3> </a> </li>
-          <li> <a href=""> <h3>Hvorfor bør du velge Red Epic til din produksjon? <span>Les nå &raquo;</span></h3> </a> </li>
-          <li> <a href=""> <h3>Hvorfor bør du velge Red Epic til din produksjon? <span>Les nå &raquo;</span></h3> </a> </li>
-        </ol>
+      <?php # All products ?>
+      <div class="products">
+        <?php foreach ($products as $group_id => $group) { ?>
+          <?php foreach ($group as $subgroup_id => $subgroup) { ?>
+            <?php foreach ($subgroup as $product) { ?>
+              <a class="product group<?php echo $group_id ?> subgroup<?php echo $subgroup_id ?>">
+                <div class="content">
+                  <div class="image">
+                    <img src="<?php if ($product['bilde2'] != null && $product['bilde2'] != 'jpg') echo $product['bilde2']; else echo "http://www.technoezine.com/wp-content/uploads/HLIC/44bba2f1c2c25ad4f2a74f88c9b645da.jpg" ?>">
+                  </div>
+                </div>  
+                <?php echo $product['navn'] ?>
+              </a>
+            <?php } ?>
+          <?php } ?>
+        <?php } ?>
       </div>
-    </div>
-    
-    <div class="row">
-      <div class="span2"> <a href=""> <img src=""> <h3>Lys &amp; rigg</h3> </a> </div>
-      <div class="span2"> <a href=""> <img src=""> <h3>Linser</h3> </a> </div>
-      <div class="span2"> <a href=""> <img src=""> <h3>Kamera</h3> </a> </div>
-      <div class="span2"> <a href=""> <img src=""> <h3>Prosess</h3> </a> </div>
-      <div class="span2"> <a href=""> <img src=""> <h3>Monitorer</h3> </a> </div>
-      <div class="span2"> <a href=""> <img src=""> <h3>Grip</h3> </a> </div>
+
+      <?php # Blog and other content ?>
+      <div class="blog_content">
+        Ferske og spennende artikler om siste nytt fra Equippe HQ
+      </div>
+
     </div>
 
-  </div>
-  
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
 
-  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-  <script>
-  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
+    <script src="js/script.js"></script>
+  </body>
 
-  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-</body>
 </html>

@@ -1,0 +1,242 @@
+@import url(bootstrap.css);
+@import url(rawengulk/stylesheet.css);
+@import url(sail/stylesheet.css);
+/* Will be compiled down to a single stylesheet with your sass files */
+/* line 1, ../../app/css/_header.sass */
+body {
+  font-family: RawengulkDemibold, sans-serif;
+  width: 100%;
+  height: 100%;
+  background: url(../gfx/bg_tile.png);
+}
+
+/* line 7, ../../app/css/_header.sass */
+ul, ol {
+  list-style-type: none;
+}
+
+/* line 10, ../../app/css/_header.sass */
+li {
+  display: block;
+  list-style-type: nonehtml;
+  height: 100%;
+}
+
+/* line 15, ../../app/css/_header.sass */
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 700px;
+  z-index: -1;
+  background: -webkit-gradient(radial, 50% 40%, 0, 50% 40%, 100, color-stop(0%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background: -webkit-radial-gradient(50% 40%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -moz-radial-gradient(50% 40%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -o-radial-gradient(50% 40%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+  background: radial-gradient(50% 40%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* line 24, ../../app/css/_header.sass */
+div, h1, h2, h3 {
+  line-height: 1.2em;
+}
+
+/* line 27, ../../app/css/_header.sass */
+h2, h3 {
+  text-shadow: 0.5px 1px 0 white;
+  color: rgba(51, 51, 51, 0.8);
+  font-size: 19px;
+}
+
+/* line 32, ../../app/css/_header.sass */
+a {
+  color: rgba(51, 51, 51, 0.8);
+}
+/* line 34, ../../app/css/_header.sass */
+a:hover {
+  color: rgba(51, 51, 51, 0.8);
+  text-decoration: none;
+}
+
+/* line 38, ../../app/css/_header.sass */
+.home .row,
+.home header {
+  text-transform: uppercase;
+}
+
+/* line 42, ../../app/css/_header.sass */
+header {
+  margin: 90px 0 10px;
+}
+/* line 45, ../../app/css/_header.sass */
+header h1 {
+  background: #aa0000;
+  color: white;
+  display: inline-block;
+  padding: 10px 35px 2px 31px;
+  font-size: 37px;
+  font-family: SailRegular, sans-serif;
+  font-weight: 100;
+  border-radius: 0 15px 0 15px;
+  margin: 0 20px 0 0;
+  text-transform: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+/* line 58, ../../app/css/_header.sass */
+header h2, header span {
+  display: inline-block;
+}
+/* line 61, ../../app/css/_header.sass */
+header span {
+  display: none;
+  float: right;
+}
+
+/* line 65, ../../app/css/_header.sass */
+ul, ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* line 1, ../../app/css/_articles.sass */
+.articles {
+  height: 60px;
+  border-radius: 0 15px 0 15px;
+  background: rgba(255, 255, 255, 0.2);
+}
+/* line 6, ../../app/css/_articles.sass */
+.articles li,
+.articles a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* line 12, ../../app/css/_articles.sass */
+.articles a {
+  color: blue;
+  padding: 0 !important;
+  padding: 16px 0 0;
+  text-align: center;
+  font-size: 20px;
+}
+/* line 19, ../../app/css/_articles.sass */
+.articles a h3 {
+  line-height: 3.2em;
+}
+/* line 22, ../../app/css/_articles.sass */
+.articles span {
+  background: #aa0000;
+  color: white;
+  display: inline-block;
+  padding: 3px 15px;
+  border-radius: 10px;
+  text-shadow: none;
+  font-size: 14px;
+  margin-left: 0.5em;
+  line-height: normal;
+}
+
+/* line 1, ../../app/css/_span3.sass */
+.brown, .red {
+  position: relative;
+}
+
+/* line 4, ../../app/css/_span3.sass */
+.brown h3,
+.red h3 {
+  margin: 0 10px;
+  color: white;
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* line 15, ../../app/css/_span3.sass */
+.brown:after,
+.red:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: rgba(92, 61, 59, 0.8);
+  top: 0;
+  pointer-events: none;
+}
+
+/* line 26, ../../app/css/_span3.sass */
+.red:after {
+  background: #aa0000;
+}
+
+/* line 29, ../../app/css/_span3.sass */
+.span3 h3 span {
+  display: block;
+  font-family: SailRegular, serif;
+  text-transform: none;
+  font-size: 16px;
+}
+
+/* line 1, ../../app/css/_span2.sass */
+h3 {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 6, ../../app/css/_span2.sass */
+.row > div {
+  margin-bottom: 20px;
+  -webkit-transition: all 0.2s ease-out 1s linear;
+  -moz-transition: all 0.2s ease-out 1s linear;
+  -ms-transition: all 0.2s ease-out 1s linear;
+  -o-transition: all 0.2s ease-out 1s linear;
+  transition: all 0.2s ease-out 1s linear;
+}
+
+/* line 10, ../../app/css/_span2.sass */
+.row > div > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 15, ../../app/css/_span2.sass */
+.row > .brown > a,
+.row > .red > a {
+  display: table;
+}
+
+/* line 19, ../../app/css/_span2.sass */
+.row > div:hover {
+  box-shadow: 0 1px 9px rgba(0, 0, 0, 0.6);
+}
+
+/* line 22, ../../app/css/_span2.sass */
+.span6, .span3 {
+  height: 210px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* line 26, ../../app/css/_span2.sass */
+.span2 {
+  height: 140px;
+  background: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+/* line 30, ../../app/css/_span2.sass */
+.span2 a {
+  height: 100%;
+  padding-top: 90px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 130, color-stop(65.38462%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0.8)));
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 85px, rgba(255, 255, 255, 0.8) 130px);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 85px, rgba(255, 255, 255, 0.8) 130px);
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 85px, rgba(255, 255, 255, 0.8) 130px);
+  background: linear-gradient(top, rgba(255, 255, 255, 0) 85px, rgba(255, 255, 255, 0.8) 130px);
+}

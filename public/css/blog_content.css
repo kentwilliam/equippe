@@ -1,0 +1,23 @@
+.blog_content {
+  position: absolute;
+  top: 800px;
+  left: 160px;
+  width: 790px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  border: 1px solid #eee;
+
+  -webkit-transition: 0.6s ease-out 0s;
+  -moz-transition: 0.6s ease-out 0s;
+  -o-transition: 0.6s ease-out 0s;
+  -ms-transition: 0.6s ease-out 0s;
+  transition: 0.6s ease-out 0s;
+}
+
+.home .blog_content {
+  top: 500px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
