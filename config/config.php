@@ -1,6 +1,12 @@
 <?php
 
+error_reporting(E_ALL);
+
 $_CONFIG = array(
-    "db_user"     => "equippe_temp",
-    "db_password" => "equippe_temp"
+  "db" => array(
+    "host"       => "localhost",
+    "name"       => "",
+    "user_name"  => "",
+    "password"   => ""
+  )
 );
