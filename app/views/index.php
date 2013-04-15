@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="css/navigation.css" type="text/css">
     <link rel="stylesheet" href="css/product.css" type="text/css">
+    <link rel="stylesheet" href="css/product_popups.css" type="text/css">
     <link rel="stylesheet" href="css/blog_content.css" type="text/css">
     <script src="js/jquery-1.9.1.js"></script>
   </head>
@@ -39,12 +40,32 @@
         <?php } ?>
       </nav>
 
-      <?php # All products ?>
+      <?php # All products detail popups ?>
+      <div class="product_popups hidden">
+        <?php foreach ($products as $group_id => $group) { ?>
+          <?php foreach ($group as $subgroup_id => $subgroup) { ?>
+            <?php foreach ($subgroup as $product) { ?>
+              <div class="product_popup group<?php echo $group_id ?> subgroup<?php echo $subgroup_id ?>" id="<?php echo $product['id'] ?>">
+                <div class="image">
+                  <img src="<?php if ($product['bilde2'] != null && $product['bilde2'] != 'jpg') echo $product['bilde2']; else echo "http://www.technoezine.com/wp-content/uploads/HLIC/44bba2f1c2c25ad4f2a74f88c9b645da.jpg" ?>">
+                </div>
+                <h2><?php echo $product['navn'] ?></h2>
+                <div class="article">
+                  <?php echo $product['beskrivelse'] ?>
+                </div>
+                <a class="close">&times;</a>
+              </div>
+            <?php } ?>
+          <?php } ?>
+        <?php } ?>
+      </div>
+
+      <?php # All product links ?>
       <div class="products">
         <?php foreach ($products as $group_id => $group) { ?>
           <?php foreach ($group as $subgroup_id => $subgroup) { ?>
             <?php foreach ($subgroup as $product) { ?>
-              <a class="product group<?php echo $group_id ?> subgroup<?php echo $subgroup_id ?>">
+              <a class="product group<?php echo $group_id ?> subgroup<?php echo $subgroup_id ?>" data-product-id="<?php echo $product['id'] ?>">
                 <div class="content">
                   <div class="image">
                     <img src="<?php if ($product['bilde2'] != null && $product['bilde2'] != 'jpg') echo $product['bilde2']; else echo "http://www.technoezine.com/wp-content/uploads/HLIC/44bba2f1c2c25ad4f2a74f88c9b645da.jpg" ?>">

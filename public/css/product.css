@@ -1,9 +1,10 @@
 /* PRODUCT TILES */
-.products {
+.products,
+.product_popups {
   position: absolute;
   top: 160px;
   left: 160px;
-  width: 1000px;
+  width: 970px;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   filter: alpha(opacity=100);
   opacity: 1;
@@ -16,7 +17,8 @@
 }
 
 .products.hidden,
-.home .products {
+.home .products,
+.product_popups.hidden {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
   opacity: 0;
@@ -45,52 +47,11 @@
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 16px; /*-webkit-transform:  rotateY(0deg);
-  
-
--webkit-transition:  -webkit-transform 0.5s 0.2s;
-  
--moz-transition:  -moz-transform 0.5s 0.2s;
-  
--o-transition:  -o-transform 0.5s 0.2s;
-  
--ms-transition:  -ms-transform 0.5s 0.2s;
-  
-transition:  transform 0.5s 0.2s;
-  
-*/
+  font-size: 16px; 
 }
 
 .product.hidden {
   display: none;
-}
-
-.home .product {
-  /*
-
--webkit-transform:  rotateY(180deg);
-  
--moz-transform:  rotateY(180deg);
-  
--o-transform:  rotateY(180deg);
-  
--ms-transform:  rotateY(180deg);
-  
-transform:  rotateY(180deg);
-  
-
--webkit-transition:  -webkit-transform 0.5s;
-  
--moz-transition:  -moz-transform 0.5s;
-  
--o-transition:  -o-transform 0.5s;
-  
--ms-transition:  -ms-transform 0.5s;
-  
-transition:  transform 0.5s;
-  
-
-   */
 }
 
 .product .image {
@@ -105,4 +66,105 @@ transition:  transform 0.5s;
 .product .image img {
   max-height: 150px;
   max-width: 150px;
+}
+
+.product_popup {
+  width: 950px;
+  height: 450px;
+  background: #E6E6E6;
+  position: absolute;
+  top: 0;
+}
+
+.product_popup {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  left: -300%;
+
+  position: absolute;
+  top: 0;
+  width: 950px;
+  height: 450px;
+  overflow: hidden;
+
+  -webkit-transition:  left 0.01s 0.6s, opacity 0.5s;
+  -moz-transition:  left 0.01s 0.6s, opacity 0.5s;
+  -o-transition:  left 0.01s 0.6s, opacity 0.5s;
+  -ms-transition:  left 0.01s 0.6s, opacity 0.5s;
+  transition:  left 0.01s 0.6s, opacity 0.5s;
+}
+
+.product_popup.selected {
+  left: 0;
+
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+
+  -webkit-transition:  left 0.01s, opacity 0.5s 0.1s;
+  -moz-transition:  left 0.01s, opacity 0.5s 0.1s;
+  -o-transition:  left 0.01s, opacity 0.5s 0.1s;
+  -ms-transition:  left 0.01s, opacity 0.5s 0.1s;
+  transition:  left 0.01s, opacity 0.5s 0.1s;
+}
+
+.product_popup h2 {
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin-top: 85px;
+}
+
+.product_popup .image {
+  float: left;
+  margin-right: 34px;
+  width: 470px;
+}
+
+.product_popup img {
+  min-width: 470px;
+  min-height: 470px;
+}
+
+.product_popup .article {
+  line-height: 1.9em;
+  font-size: 15px;
+  margin-left: 504px;
+  width: 273px;
+  height: 273px;
+  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.product_popup:after {
+  content: "";
+  position: absolute;
+  bottom: 42px;
+  height: 100px;
+  width: 100%;
+  background: -webkit-linear-gradient(top, rgba(230, 230, 230, 0) 0%, rgba(230, 230, 230, 1) 95%);
+}
+
+.product_popup .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: #808080;
+  color: white;
+  text-align: center;
+  font-size: 100px;
+  line-height: 138px;
+  font-weight: 600;
+}
+  .product_popup .close:hover {
+    color: white;
+    background: #d00;
+  }
+
+.product_popup .article p {
+  margin-top: 0;
 }
