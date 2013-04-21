@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <?php /*<link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'> */ ?>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="css/navigation.css" type="text/css">
     <link rel="stylesheet" href="css/product.css" type="text/css">
@@ -16,7 +17,7 @@
     <div class="page_container home">
 
       <nav class="contact">
-        <a href="REPLACEME">Contact us</a>
+        <a href="mailto:booking@equippe.no">Contact us</a>
         <a href="mailto:booking@equippe.no">booking@equippe.no</a>
       </nav>
 
@@ -47,7 +48,12 @@
             <?php foreach ($subgroup as $product) { ?>
               <div class="product_popup group<?php echo $group_id ?> subgroup<?php echo $subgroup_id ?>" id="<?php echo $product['id'] ?>">
                 <div class="image">
-                  <img src="<?php if ($product['bilde2'] != null && $product['bilde2'] != 'jpg') echo $product['bilde2']; else echo "http://www.technoezine.com/wp-content/uploads/HLIC/44bba2f1c2c25ad4f2a74f88c9b645da.jpg" ?>">
+                  <img src="<?php 
+                      if ($product['bilde2']) 
+                        echo "files/produkter_" . $product['id'] . "_2_normal." . $product['bilde2']; 
+                      else 
+                        echo "images/no_image.jpg" 
+                  ?>">
                 </div>
                 <h2><?php echo $product['navn'] ?></h2>
                 <div class="article">
@@ -68,7 +74,12 @@
               <a class="product group<?php echo $group_id ?> subgroup<?php echo $subgroup_id ?>" data-product-id="<?php echo $product['id'] ?>">
                 <div class="content">
                   <div class="image">
-                    <img src="<?php if ($product['bilde2'] != null && $product['bilde2'] != 'jpg') echo $product['bilde2']; else echo "http://www.technoezine.com/wp-content/uploads/HLIC/44bba2f1c2c25ad4f2a74f88c9b645da.jpg" ?>">
+                    <img src="<?php 
+                      if ($product['bilde2']) 
+                        echo "files/produkter_" . $product['id'] . "_2_normal." . $product['bilde2']; 
+                      else 
+                        echo "images/no_image.jpg" 
+                      ?>">
                   </div>
                 </div>  
                 <?php echo $product['navn'] ?>

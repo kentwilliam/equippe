@@ -1,7 +1,8 @@
 body {
   font-family: sans-serif;
   font-family: 'Istok Web', sans-serif;
-  font-family: 'Lato', sans-serif;
+  /*font-family: 'Lato', sans-serif;*/
+  font-family: 'Montserrat', sans-serif;
   overflow: scroll;
 }
 
@@ -22,26 +23,43 @@ a {
   position: relative;
   width: 1110px;
   margin: 120px auto 0;
-}
-
-.contact {
-  text-transform: uppercase;
-  text-align: right;
-  position: relative;
-  font-size: 15px;
-  font-weight: 600;
-  top: -40px;
-  right: 0;
   -webkit-transition: 0.4s ease-out;
   -moz-transition: 0.4s ease-out;
   -o-transition: 0.4s ease-out;
   -ms-transition: 0.4s ease-out;
   transition: 0.4s ease-out;
 }
+
+.wf-loading .page_container {
+  opacity: 0;
+}
+
+  /*.home.page_container {
+    margin-top: 280px;
+  }*/
+
+.contact {
+  text-transform: uppercase;
+  text-align: right;
+  position: relative;
+  font-size: 15px;
+  right: 0;
+  -webkit-transition: 0.4s ease-out;
+  -moz-transition: 0.4s ease-out;
+  -o-transition: 0.4s ease-out;
+  -ms-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  z-index: 4;
+  top: -37px
+}
   .home .contact {
-    right: 160px;
+    right: 397px;
+    top: -50px;
   }
 .contact a {
   text-decoration: none;
   margin-left: 20px;
 }
+  .contact a:hover {
+    color: #f33;
+  }

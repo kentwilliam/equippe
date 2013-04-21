@@ -1,4 +1,6 @@
 .blog_content {
+  display: none;
+
   position: absolute;
   top: 800px;
   left: 160px;

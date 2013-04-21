@@ -20,15 +20,22 @@
     if ($('.page_container').hasClass('home')) {
       return;
     }
+    closeProductPopup();
+    setTimeout(function() {
+      return $('.primary > .logo').removeClass('reappear');
+    }, 400);
     $('nav.primary .selected').removeClass('selected');
     return $('.page_container').addClass('home');
   };
 
   handleNavClick = function(evt) {
     var clicked, groupId;
-    clicked = evt.target.parentNode;
+    clicked = evt.target;
+    if (clicked.nodeName === 'SPAN') {
+      clicked = clicked.parentNode;
+    }
     $('nav.primary .selected').removeClass('selected');
-    $(clicked.parentNode).addClass('selected');
+    $(clicked).addClass('selected');
     groupId = $(clicked).attr('data-group-id');
     $('.products').addClass('hidden');
     $('.product_popups').addClass('hidden');
@@ -45,14 +52,20 @@
       return $('.products').removeClass('hidden');
     }, 500);
     if ($('.page_container').hasClass('home')) {
-      return $('.page_container').removeClass('home');
+      $('.page_container').removeClass('home');
+      return setTimeout(function() {
+        return $('.primary > .logo').addClass('reappear');
+      }, 1000);
     }
   };
 
   handleSecondaryNavClick = function(evt) {
     var clicked, subgroupId;
-    clicked = evt.target.parentNode;
-    $('.selected nav.secondary .selected').removeClass('selected');
+    clicked = evt.target;
+    if (clicked.nodeName === 'SPAN') {
+      clicked = clicked.parentNode;
+    }
+    $('nav.secondary .selected').removeClass('selected');
     $(clicked).addClass('selected');
     subgroupId = $(clicked).attr('data-subgroup-id');
     $('.products').addClass('hidden');
@@ -74,14 +87,14 @@
   handleProductClick = function(evt) {
     var clicked;
     clicked = evt.target.nodeName === 'A' ? $(evt.target) : $(evt.target).parents('a.product');
-    return openProductPopup(clicked.attr('data-product-id'));
+    return openProductPopup(clicked.attr('data-product-id'), clicked);
   };
 
-  openProductPopup = function(productId) {
+  openProductPopup = function(productId, productElem) {
     $('.product_popup.selected').removeClass('selected');
     $('.products').addClass('hidden');
-    $('.product_popups').removeClass('hidden');
-    return $('#' + productId).addClass('selected');
+    $('#' + productId).css('margin-top', productElem.get(0).offsetTop + 'px').addClass('selected');
+    return $('.product_popups').removeClass('hidden');
   };
 
   closeProductPopup = function() {

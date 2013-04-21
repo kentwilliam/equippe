@@ -19,16 +19,23 @@ handleLogoClick = (evt) ->
 
   return if $('.page_container').hasClass('home')
 
+  closeProductPopup();
+
+  setTimeout( ->
+    $('.primary > .logo').removeClass('reappear')
+  , 400)
+
   $('nav.primary .selected').removeClass('selected')
   $('.page_container').addClass 'home'
 
 
 handleNavClick = (evt) ->
-  clicked = evt.target.parentNode
+  clicked = evt.target
+  clicked = clicked.parentNode if (clicked.nodeName == 'SPAN')
 
   # Select/unselect menu items
   $('nav.primary .selected').removeClass('selected')
-  $(clicked.parentNode).addClass('selected')
+  $(clicked).addClass('selected')
 
   # Hide/unhide products
   groupId = $(clicked).attr 'data-group-id'
@@ -44,15 +51,20 @@ handleNavClick = (evt) ->
     $('.products').removeClass('hidden')
   , 500)
   
+  # Moving away from home page?
   if $('.page_container').hasClass('home')
     $('.page_container').removeClass 'home'
+    setTimeout( ->
+      $('.primary > .logo').addClass('reappear')
+    , 1000)
 
 
 handleSecondaryNavClick = (evt) ->
-  clicked = evt.target.parentNode
+  clicked = evt.target
+  clicked = clicked.parentNode if (clicked.nodeName == 'SPAN')
 
   # Select/unselect menu items
-  $('.selected nav.secondary .selected').removeClass('selected')
+  $('nav.secondary .selected').removeClass('selected')
   $(clicked).addClass('selected')
 
   # Hide/unhide products
@@ -60,7 +72,7 @@ handleSecondaryNavClick = (evt) ->
 
   $('.products').addClass('hidden')
   $('.product_popups').addClass('hidden')
-  setTimeout( () -> 
+  setTimeout( -> 
     $('.products > a').each (i, productLink) ->
       isInGroup = $(productLink).hasClass('subgroup' + subgroupId)
       if isInGroup
@@ -73,14 +85,14 @@ handleSecondaryNavClick = (evt) ->
 
 handleProductClick = (evt) ->
   clicked = if evt.target.nodeName == 'A' then $(evt.target) else $(evt.target).parents('a.product')
-  openProductPopup clicked.attr('data-product-id')
+  openProductPopup clicked.attr('data-product-id'), clicked
 
 
-openProductPopup = (productId) ->
+openProductPopup = (productId, productElem) ->
   $('.product_popup.selected').removeClass('selected')
   $('.products').addClass('hidden')
+  $('#' + productId).css('margin-top', productElem.get(0).offsetTop + 'px').addClass('selected')
   $('.product_popups').removeClass('hidden')
-  $('#' + productId).addClass('selected')
 
 
 closeProductPopup = () ->
