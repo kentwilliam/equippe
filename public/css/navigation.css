@@ -136,6 +136,7 @@ nav.primary > div > a {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
       -ms-box-sizing: border-box;
+       -o-box-sizing: border-box;
           box-sizing: border-box;
 
   -webkit-transition: 0.4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
