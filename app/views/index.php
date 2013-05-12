@@ -70,17 +70,17 @@
           <?php foreach ($group as $subgroup_id => $subgroup) { ?>
             <?php foreach ($subgroup as $product) { ?>
               <a class="product group<?php echo $group_id ?> subgroup<?php echo $subgroup_id ?>" data-product-id="<?php echo $product['id'] ?>">
-                <div class="content">
-                  <div class="image">
-                    <img src="<?php 
-                      if ($product['bilde2']) 
-                        echo "files/produkter_" . $product['id'] . "_2_normal." . $product['bilde2']; 
-                      else 
-                        echo "images/no_image.jpg" 
-                      ?>">
-                  </div>
+                <div class="image">
+                  <img src="<?php 
+                    if ($product['bilde2']) 
+                      echo "files/produkter_" . $product['id'] . "_2_normal." . $product['bilde2']; 
+                    else 
+                      echo "images/no_image.jpg" 
+                    ?>">
+                </div>
+                <h3>
                   <?php echo $product['navn'] ?>
-                </div>  
+                </h3>  
               </a>
             <?php } ?>
           <?php } ?>
