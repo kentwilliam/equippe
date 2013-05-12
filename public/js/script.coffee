@@ -5,6 +5,7 @@ $ ->
   $('.secondary > a'               ).click handleSecondaryNavClick
   $('.product'                     ).click handleProductClick
   $('.product_popup .close'        ).click closeProductPopup
+  $('.paint_toggle'                ).click handlePaintToggleClick
 
   # # Initialize submenus
   # $('.secondary').each (i, secondaryNav) ->
@@ -99,5 +100,6 @@ closeProductPopup = () ->
   $('.product_popups').addClass('hidden')
   $('.products').removeClass('hidden')
 
-
+handlePaintToggleClick = (evt) ->
+  $(document.body).toggleClass('disable_paint')
 

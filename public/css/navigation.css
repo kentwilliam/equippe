@@ -69,6 +69,9 @@ nav.primary > .logo > a:after {
           transition: none;
   pointer-events: none;
 }
+  .disable_paint nav.primary > .logo > a:after {
+    background: none;
+  }
 
 nav.primary > .logo.reappear > a {
   opacity: 1;
@@ -220,6 +223,9 @@ nav.primary > :not(.logo) > a:after {
 
   pointer-events: none;
 }
+  .disable_paint nav.primary > :not(.logo) > a:after {
+    background: none;
+  }
 nav.primary > :not(.logo) > a.selected:after {
   opacity: 1;
 }
@@ -300,6 +306,8 @@ nav.secondary a:before {
 .light_grip nav.secondary a:before { background-image: url(../images/cat_splats_4.png); }
 .grip       nav.secondary a:before { background-image: url(../images/cat_splats_5.png); }
 .sound      nav.secondary a:before { background-image: url(../images/cat_splats_6.png); }
+
+.disable_paint nav.secondary a:before { display: none }
 
 nav.secondary a:nth-child(1):before       { background-position: 0 0      }
 nav.secondary a:nth-child(2):before       { background-position: 0 -150px }

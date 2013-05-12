@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <?php #<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> ?>
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="css/navigation.css" type="text/css">
     <link rel="stylesheet" href="css/product.css" type="text/css">
@@ -79,8 +79,8 @@
                         echo "images/no_image.jpg" 
                       ?>">
                   </div>
+                  <?php echo $product['navn'] ?>
                 </div>  
-                <?php echo $product['navn'] ?>
               </a>
             <?php } ?>
           <?php } ?>
@@ -94,6 +94,7 @@
 
     </div>
 
+    <button class="paint_toggle">
 
     <script src="js/script.js"></script>
   </body>

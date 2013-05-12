@@ -1,5 +1,6 @@
 body {
-  font-family: 'Montserrat', sans-serif;
+  /*font-family: 'Montserrat', sans-serif;*/
+  font-family: sans-serif;
   overflow: scroll;
 }
 
@@ -30,6 +31,32 @@ a {
 .wf-loading .page_container {
   opacity: 0;
 }
+
+.paint_toggle {
+  width: 100px;
+  height: 62px;
+  background: url('../images/paint_toggle.png');
+  cursor: pointer;
+  background-size: 300px 62px;
+  position: absolute;
+  border: none;
+  -webkit-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+  top: -5px;
+  right: -20px;
+}
+  .paint_toggle:hover {
+    background-position: -400px 0;
+  }
+  .disable_paint .paint_toggle {
+    background-position: -200px 0;
+  }
+  .disable_paint .paint_toggle:hover {
+    background-position: -200px 0;
+    opacity: 0.8;
+  }
 
 .contact {
   text-transform: uppercase;
