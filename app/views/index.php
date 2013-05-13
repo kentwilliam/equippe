@@ -18,6 +18,7 @@
         <a href="mailto:booking@equippe.no">Contact us</a>
         <a href="mailto:booking@equippe.no">booking@equippe.no</a>
         <a href="https://www.facebook.com/EQUIPPE.no" class="fb_link">Visit Our Facebook Page</a>
+        <a class="paint_toggle"></a>
       </nav>
 
       <?php # Primary navigation ?>
@@ -84,8 +85,6 @@
       </div>
 
     </div>
-
-    <button class="paint_toggle">
 
     <script src="js/script.js"></script>
   </body>

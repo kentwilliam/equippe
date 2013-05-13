@@ -37,14 +37,18 @@ a {
   background: url('../images/paint_toggle.png');
   cursor: pointer;
   background-size: 150px 75px;
-  position: absolute;
   border: none;
+  position: relative;
+  top: 32px;
+  z-index: 200;
+  right: 0;
+  display: inline-block;
+  left: -28px;
+
   -webkit-transform: scale(0.7);
   -moz-transform: scale(0.7);
   -ms-transform: scale(0.7);
   transform: scale(0.7);
-  top: -5px;
-  right: -20px;
 }
   .paint_toggle:hover {
     opacity: 0.8;
@@ -58,18 +62,20 @@ a {
   text-align: right;
   position: relative;
   font-size: 15px;
-  right: 0;
+
+  top: -108px;
+  right: -50px;
+
   -webkit-transition: 0.4s ease-out;
      -moz-transition: 0.4s ease-out;
       -ms-transition: 0.4s ease-out;
        -o-transition: 0.4s ease-out;
           transition: 0.4s ease-out;
   z-index: 4;
-  top: -37px
 }
   .home .contact {
-    right: 397px;
-    top: -50px;
+    right: 297px;
+    top: -127px;
   }
 .contact a {
   text-decoration: none;
@@ -87,4 +93,10 @@ a {
   display: inline-block;
   color: rgba(0,0,0,0);
   background-size: 22px 22px;
+  position: relative;
+  top: 6px;
 }
+  .contact .fb_link:hover {
+    color: rgba(0,0,0,0);
+    opacity: 0.8;
+  }
