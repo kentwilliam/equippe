@@ -1,6 +1,7 @@
 <?php
 
 require_once "../config/config.php";
+require_once "../app/models/article.php";
 require_once "../app/models/product.php";
 require_once "../app/helpers/helpers.php";
 
@@ -9,6 +10,6 @@ $data = get_products_and_group_index();
 $products = $data['products'];
 $group_index = $data['group_index'];
 
+$articles = get_articles();
+
 include get_view('index');
-
-

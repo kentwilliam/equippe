@@ -28,8 +28,8 @@ nav.primary > .logo > a {
   left: 160px;
   left: 480px;
   top: 50px;
-  -webkit-transform: scale(1);
   opacity: 1;
+
   -webkit-transition: background 0.3s ease-out 1s, opacity 0.3s ease-out 1s, top 0.3s;
      -moz-transition: background 0.3s ease-out 1s, opacity 0.3s ease-out 1s, top 0.3s;
        -o-transition: background 0.3s ease-out 1s, opacity 0.3s ease-out 1s, top 0.3s;
@@ -72,6 +72,14 @@ nav.primary > .logo > a:after {
   .disable_paint nav.primary > .logo > a:after {
     background: none;
   }
+  .disable_paint nav.primary > .logo > a:before {
+    -webkit-transform: scale(0.66);
+       -moz-transform: scale(0.66);
+        -ms-transform: scale(0.66);
+         -o-transform: scale(0.66);
+            transform: scale(0.66);
+  }
+
 
 nav.primary > .logo.reappear > a {
   opacity: 1;
