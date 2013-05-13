@@ -68,6 +68,8 @@ function get_products_and_group_index() {
       $popup_image = "images/no_image.jpg";
     $p['popup_image'] = $popup_image;
 
+    $p['beskrivelse'] = str_replace('<p>&nbsp;</p>', '', $p['beskrivelse']);
+    
     array_push($products[$p['gruppe_id']][$p['undergruppe_id']], $p);
   }
 

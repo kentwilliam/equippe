@@ -116,19 +116,20 @@ handlePaintToggleClick = (evt) ->
 # Insert buttons for the popup articles where it's necessary
 initExpansionButtons = ->
   articles = $('.product_popup .article')
-  articles.each (i, elem) ->
-    if elem.children.length > 0
-      lastChild = elem.children[elem.children.length - 1]
-      articleHeight = lastChild.clientHeight + lastChild.offsetTop
-      if articleHeight > 400
-        insertExpansionButton elem
+  articles.each (i, article) ->
+    if article.children.length > 0
+      #lastChild = article.children[article.children.length - 1]
+      #articleHeight = getArticleHeight(article) #lastChild.clientHeight + lastChild.offsetTop
+      #log('article height is ' + articleHeight)
+      #if articleHeight > 340
+      insertExpansionButton article
   # Attach click events to buttons
   $('.product_popup .expand').click (evt) ->
     clicked   = evt.target
     $popup    = $(clicked.parentNode.parentNode)
     article   = clicked.parentNode
     #lastChild = article.children.length > 1 && article.children[article.children.length - 2]
-    log 'height: ' + getArticleHeight(article)
+    #log 'height: ' + getArticleHeight(article)
     articleHeight = getArticleHeight(article)
     if !$popup.hasClass('expanded')
       $(article).css('height', (articleHeight + 100) + 'px')#(lastChild.offsetTop + lastChild.clientHeight - 50) + 'px')
@@ -147,6 +148,11 @@ insertExpansionButton = (article) ->
 
 getArticleHeight = (article) ->
   lastChild = article.children.length > 0 && article.children[article.children.length - 1]
+  # log('--')
+  # log(article)
+  # log(article.children)
+  # log(lastChild)
+  #log(lastChild.offsetTop + '-' + lastChild.clientHeight)
   if lastChild.nodeName == 'BUTTON'
     lastChild = article.children.length > 1 && article.children[article.children.length - 2]
   return lastChild.offsetTop + lastChild.clientHeight
@@ -158,7 +164,7 @@ handleAboutUsClick = (evt) ->
 
 
 handleStudioClick = (evt) ->
-  log "CICKED MED"
+  # log "CICKED MED"
   evt.preventDefault()
   evt.stopPropagation()
   showArticle(91)

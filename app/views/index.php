@@ -41,7 +41,7 @@
         <?php } ?>
         <div class="studio">
           <a class="menu_tile">
-            <span>Studio</span>
+            <span>Studio &amp; Lab</span>
           </a>
         </div>
       </nav>

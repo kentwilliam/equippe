@@ -116,14 +116,9 @@
   initExpansionButtons = function() {
     var articles;
     articles = $('.product_popup .article');
-    articles.each(function(i, elem) {
-      var articleHeight, lastChild;
-      if (elem.children.length > 0) {
-        lastChild = elem.children[elem.children.length - 1];
-        articleHeight = lastChild.clientHeight + lastChild.offsetTop;
-        if (articleHeight > 400) {
-          return insertExpansionButton(elem);
-        }
+    articles.each(function(i, article) {
+      if (article.children.length > 0) {
+        return insertExpansionButton(article);
       }
     });
     return $('.product_popup .expand').click(function(evt) {
@@ -131,7 +126,6 @@
       clicked = evt.target;
       $popup = $(clicked.parentNode.parentNode);
       article = clicked.parentNode;
-      log('height: ' + getArticleHeight(article));
       articleHeight = getArticleHeight(article);
       if (!$popup.hasClass('expanded')) {
         $(article).css('height', (articleHeight + 100) + 'px');
@@ -166,7 +160,6 @@
   };
 
   handleStudioClick = function(evt) {
-    log("CICKED MED");
     evt.preventDefault();
     evt.stopPropagation();
     return showArticle(91);

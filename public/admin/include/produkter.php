@@ -20,7 +20,8 @@ $cfg[type][$utable]['bilde']="image";
 $cfg[type][$utable]['bilde2']="image";
 $cfg[type][$utable]['bilde3']="image";
 
-$cfg['vname'][$utable]['bilde2']="Thumbnail (kvadratisk)";
+$cfg['vname'][$utable]['bilde']="Produktkortbilde (kvadratisk, min. 470px x 470px)";
+$cfg['vname'][$utable]['bilde2']="Kategoribilde (kvadratisk, hvit bakgrunn, min. 300x300px)";
 
 
 
