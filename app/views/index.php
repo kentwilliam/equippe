@@ -15,7 +15,7 @@
     <div class="page_container home">
 
       <nav class="contact">
-        <a href="mailto:booking@equippe.no">Contact us</a>
+        <a href="/about" class="about_us">About Us</a>
         <a href="mailto:booking@equippe.no">booking@equippe.no</a>
         <a href="https://www.facebook.com/EQUIPPE.no" class="fb_link">Visit Our Facebook Page</a>
         <a class="paint_toggle"></a>
@@ -39,6 +39,11 @@
             </nav>
           </div>
         <?php } ?>
+        <div class="studio">
+          <a class="menu_tile">
+            <span>Studio</span>
+          </a>
+        </div>
       </nav>
 
       <?php # All products detail popups ?>
@@ -81,7 +86,15 @@
 
       <?php # Blog and other content ?>
       <div class="blog_content">
-        Ferske og spennende artikler om siste nytt fra Equippe HQ
+        <?php foreach ($articles as $article) { ?>
+          <article id="article_<?php echo $article['id'] ?>">
+            <h3><?php echo $article['tittel'] ?></h3>
+            <div class="date"><?php echo(strftime("%A<br>%e. %B<br><strong>%Y</strong>", strtotime($article['dato']))); ?></div>
+            <div class="content">
+              <?php echo $article['tekst'] ?>
+            </div>
+          </article>
+        <?php } ?> 
       </div>
 
     </div>

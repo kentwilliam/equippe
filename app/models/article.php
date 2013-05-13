@@ -11,8 +11,16 @@ function get_articles() {
       artikler a
     ORDER BY
       dato DESC
-    LIMIT 10';
+    LIMIT 1000';
 
-  return fetch_result_array($articles_query);
+  $articles_raw = fetch_result_array($articles_query);
+
+  #$articles = array();
+  foreach ($articles_raw as $i => $article) {
+    #print_r($articles_raw[$i]);
+    $articles_raw[$i]['tekst'] = str_replace('<p>&nbsp;</p>', '', $article['tekst']);
+  }
+
+  return $articles_raw;
 }
 

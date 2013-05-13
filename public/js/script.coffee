@@ -1,11 +1,13 @@
 $ ->
   # Set up click handlers
-  $('.primary > .logo > a'         ).click handleLogoClick
-  $('.primary > div:not(.logo) > a').click handleNavClick
-  $('.secondary > a'               ).click handleSecondaryNavClick
-  $('.product'                     ).click handleProductClick
-  $('.product_popup .close'        ).click closeProductPopup
-  $('.paint_toggle'                ).click handlePaintToggleClick
+  $('.primary > .logo > a' ).click handleLogoClick
+  $('.primary > div:not(.logo):not(.studio) > a').click handleNavClick
+  $('.secondary > a'       ).click handleSecondaryNavClick
+  $('.product'             ).click handleProductClick
+  $('.product_popup .close').click closeProductPopup
+  $('.paint_toggle'        ).click handlePaintToggleClick
+  $('.about_us'            ).click handleAboutUsClick
+  $('.primary .studio a'   ).click handleStudioClick
 
   initExpansionButtons()
   # # Initialize submenus
@@ -60,6 +62,11 @@ handleNavClick = (evt) ->
       $('.primary > .logo').addClass('reappear')
     , 1000)
 
+  # Scroll to top
+  $('html, body').animate({
+    scrollTop: 0
+  }, 500);
+
 
 handleSecondaryNavClick = (evt) ->
   clicked = evt.target
@@ -113,7 +120,7 @@ initExpansionButtons = ->
     if elem.children.length > 0
       lastChild = elem.children[elem.children.length - 1]
       articleHeight = lastChild.clientHeight + lastChild.offsetTop
-      if articleHeight > 230
+      if articleHeight > 400
         insertExpansionButton elem
   # Attach click events to buttons
   $('.product_popup .expand').click (evt) ->
@@ -143,3 +150,25 @@ getArticleHeight = (article) ->
   if lastChild.nodeName == 'BUTTON'
     lastChild = article.children.length > 1 && article.children[article.children.length - 2]
   return lastChild.offsetTop + lastChild.clientHeight
+
+
+handleAboutUsClick = (evt) ->
+  evt.preventDefault()
+  showArticle(91)
+
+
+handleStudioClick = (evt) ->
+  log "CICKED MED"
+  evt.preventDefault()
+  evt.stopPropagation()
+  showArticle(91)
+
+
+showArticle = (articleId) ->
+  # Hide every article but the relevant one
+  $('.blog_content article:not(#article_' + articleId + ')').addClass('hidden')
+
+  # Scroll to show article
+  $('html, body').animate({
+    scrollTop: $('#article_' + articleId).offset().top - 110
+  }, 500);

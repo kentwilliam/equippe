@@ -265,19 +265,21 @@ nav.primary .light > a            { background-image: url(../images/light.jpg); 
 nav.primary .light_grip > a       { background-image: url(../images/light_grip.jpg); left: 640px; }
 nav.primary .grip > a             { background-image: url(../images/grip.jpg);       left: 800px; }
 nav.primary .sound > a            { background-image: url(../images/sound.jpg);      left: 960px; }
-.home nav.primary .camera > a     { left: 80px;  top: 300px; }
-.home nav.primary .lenses > a     { left: 240px; top: 300px; }
-.home nav.primary .light > a      { left: 400px; top: 300px; }
-.home nav.primary .light_grip > a { left: 560px; top: 300px; }
-.home nav.primary .grip > a       { left: 720px; top: 300px; }
-.home nav.primary .sound > a      { left: 880px; top: 300px; }
+nav.primary .studio > a           { background-image: url(../images/studio.jpg);     left: 960px; top: 300px; opacity: 0; z-index: -1 }
+.home nav.primary .camera > a     { left: 0;  top: 300px; }
+.home nav.primary .lenses > a     { left: 160px; top: 300px; }
+.home nav.primary .light > a      { left: 320px; top: 300px; }
+.home nav.primary .light_grip > a { left: 480px; top: 300px; }
+.home nav.primary .grip > a       { left: 640px; top: 300px; }
+.home nav.primary .sound > a      { left: 800px; top: 300px; }
+.home nav.primary .studio > a     { left: 960px; top: 300px; opacity: 1 }
 
-nav.primary .camera > a           {/* -webkit-transition-timing-function: cubic-bezier(0.285, 1.435, 0.695, -0.285); */-webkit-transition-delay: 0.43s; }
-nav.primary .lenses > a           { /*X-webkit-transition-timing-function: cubic-bezier(0.285, 1.435, 0.695, -0.285);*/ -webkit-transition-delay: 0.32s; }
-nav.primary .light > a            {/* -webkit-transition-timing-function: cubic-bezier(0.270, 1.180, 0.780, 0.380); */-webkit-transition-delay: 0.5s; }
-nav.primary .light_grip > a       { /*X-webkit-transition-timing-function: cubic-bezier(0.285, 1.435, 0.695, -0.285);*/ -webkit-transition-delay: 0.48s; }
-nav.primary .grip > a             {/* -webkit-transition-timing-function: cubic-bezier(0.285, 1.435, 0.695, -0.285); */-webkit-transition-delay: 0.37s; }
-nav.primary .sound > a            { /*X-webkit-transition-timing-function: cubic-bezier(0.285, 1.435, 0.695, -0.285);*/ -webkit-transition-delay: 0.45s; }
+nav.primary .camera > a           { -webkit-transition-delay: 0.43s; }
+nav.primary .lenses > a           { -webkit-transition-delay: 0.32s; }
+nav.primary .light > a            { -webkit-transition-delay: 0.5s; }
+nav.primary .light_grip > a       { -webkit-transition-delay: 0.48s; }
+nav.primary .grip > a             { -webkit-transition-delay: 0.37s; }
+nav.primary .sound > a            { -webkit-transition-delay: 0.45s; }
 
 
 
