@@ -38,6 +38,8 @@ function get_products_and_group_index() {
   $products = array();
   $groups = array();
   foreach ($products_raw as $p) {
+
+    # Ensure group and subgroup existence
     if (!array_key_exists($p['gruppe_id'], $products)) {
       $products[$p['gruppe_id']] = array();
       $groups[$p['gruppe_id']] = array('id' => $p['gruppe_id'], 'navn' => $p['gruppe']);
@@ -46,9 +48,33 @@ function get_products_and_group_index() {
       $products[$p['gruppe_id']][$p['undergruppe_id']] = array();
       $groups[$p['undergruppe_id']] = array('id' => $p['undergruppe_id'], 'navn' => $p['undergruppe']);
     }
+
+    # Prepare images
+    # Thumb (category view) images prefer bilde2
+    if ($p['bilde2']) 
+      $category_image = get_link($p, 2, $p['bilde2']); 
+    elseif ($p['bilde']) 
+      $category_image = get_link($p, 1, $p['bilde']); 
+    else 
+      $category_image = "images/no_image.jpg";
+    $p['category_image'] = $category_image;
+
+    # Popup images prefer bilde1
+    if ($p['bilde']) 
+      $popup_image = get_link($p, 1, $p['bilde']); 
+    elseif ($p['bilde2']) 
+      $popup_image = get_link($p, 2, $p['bilde2']); 
+    else 
+      $popup_image = "images/no_image.jpg";
+    $p['popup_image'] = $popup_image;
+
     array_push($products[$p['gruppe_id']][$p['undergruppe_id']], $p);
   }
 
   return array('products' => $products, 'group_index' => $groups);
+}
+
+function get_link($product, $number, $extension) {
+  return "files/produkter_" . $product['id'] . "_" . $number . "_normal." . ($number == 1 ? $product['bilde'] : $product['bilde' . $number]);
 }
 

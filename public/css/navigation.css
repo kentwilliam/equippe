@@ -1,5 +1,5 @@
 /* LOGO */
-nav.primary>.logo {
+nav.primary > .logo {
   width: 150px;
   height: 150px;
   display: block;
@@ -193,13 +193,24 @@ nav.primary > :not(.logo) > a:before {
 }
   nav.primary > :not(.logo) > a:not(.selected):hover:before {
     background: -webkit-linear-gradient(top, rgba(255,255,255,0.1), rgba(230, 230, 230, 0.9) 75%);
-
   }
   
 
-nav.primary > div > a.selected > span {
+body:not(.disable_paint) nav.primary > div > a.selected > span {
   color: white;
 }
+  .disable_paint nav.primary > div > a.selected {
+    -webkit-transform: scale(1.05);
+       -moz-transform: scale(1.05);
+        -ms-transform: scale(1.05);   
+         -o-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-transition-delay: 0 !important;
+       -moz-transition-delay: 0 !important;
+         -o-transition-delay: 0 !important;
+        -ms-transition-delay: 0 !important;
+            transition-delay: 0 !important;
+  }
 
 /* PAINT SPLATS */
 nav.primary > :not(.logo) > a:after {
@@ -215,11 +226,11 @@ nav.primary > :not(.logo) > a:after {
   left: -50px;
   opacity: 0;
   z-index: 2;
-  -webkit-transition: 0.1s ease-out;
+  /*-webkit-transition: 0.1s ease-out;
      -moz-transition: 0.1s ease-out;
       -ms-transition: 0.1s ease-out;
        -o-transition: 0.1s ease-out;
-          transition: 0.1s ease-out;
+          transition: 0.1s ease-out;*/
 
   pointer-events: none;
 }
@@ -417,10 +428,10 @@ nav.secondary a {
 
 nav.secondary a {
   -webkit-transition-delay: 2.2s;
-  -moz-transition-delay: 2.2s;
-  -o-transition-delay: 2.2s;
-  -ms-transition-delay: 2.2s;
-  transition-delay: 2.2s;
+     -moz-transition-delay: 2.2s;
+       -o-transition-delay: 2.2s;
+      -ms-transition-delay: 2.2s;
+          transition-delay: 2.2s;
 }
 
 nav.secondary a:nth-child(1) {

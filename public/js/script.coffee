@@ -7,6 +7,7 @@ $ ->
   $('.product_popup .close'        ).click closeProductPopup
   $('.paint_toggle'                ).click handlePaintToggleClick
 
+  initExpansionButtons()
   # # Initialize submenus
   # $('.secondary').each (i, secondaryNav) ->
   #   secondaryNav.style.left = ((i + 1) * 160) + 'px'
@@ -100,6 +101,45 @@ closeProductPopup = () ->
   $('.product_popups').addClass('hidden')
   $('.products').removeClass('hidden')
 
+
 handlePaintToggleClick = (evt) ->
   $(document.body).toggleClass('disable_paint')
 
+
+# Insert buttons for the popup articles where it's necessary
+initExpansionButtons = ->
+  articles = $('.product_popup .article')
+  articles.each (i, elem) ->
+    if elem.children.length > 0
+      lastChild = elem.children[elem.children.length - 1]
+      articleHeight = lastChild.clientHeight + lastChild.offsetTop
+      if articleHeight > 230
+        insertExpansionButton elem
+  # Attach click events to buttons
+  $('.product_popup .expand').click (evt) ->
+    clicked   = evt.target
+    $popup    = $(clicked.parentNode.parentNode)
+    article   = clicked.parentNode
+    #lastChild = article.children.length > 1 && article.children[article.children.length - 2]
+    log 'height: ' + getArticleHeight(article)
+    articleHeight = getArticleHeight(article)
+    if !$popup.hasClass('expanded')
+      $(article).css('height', (articleHeight + 100) + 'px')#(lastChild.offsetTop + lastChild.clientHeight - 50) + 'px')
+    else
+      $(article).css('height', '')
+    $popup.css('min-height', (articleHeight + 400) + 'px')
+    $popup.toggleClass('expanded')
+
+
+insertExpansionButton = (article) ->
+  button = document.createElement('button')
+  button.className = 'expand'
+  button.innerHTML = 'EXPAND'
+  article.appendChild(button)
+
+
+getArticleHeight = (article) ->
+  lastChild = article.children.length > 0 && article.children[article.children.length - 1]
+  if lastChild.nodeName == 'BUTTON'
+    lastChild = article.children.length > 1 && article.children[article.children.length - 2]
+  return lastChild.offsetTop + lastChild.clientHeight

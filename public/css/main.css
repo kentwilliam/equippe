@@ -1,6 +1,5 @@
 body {
-  /*font-family: 'Montserrat', sans-serif;*/
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
   overflow: scroll;
 }
 
@@ -33,11 +32,11 @@ a {
 }
 
 .paint_toggle {
-  width: 100px;
-  height: 62px;
+  width: 75px;
+  height: 75px;
   background: url('../images/paint_toggle.png');
   cursor: pointer;
-  background-size: 300px 62px;
+  background-size: 150px 75px;
   position: absolute;
   border: none;
   -webkit-transform: scale(0.7);
@@ -48,14 +47,10 @@ a {
   right: -20px;
 }
   .paint_toggle:hover {
-    background-position: -400px 0;
+    opacity: 0.8;
   }
   .disable_paint .paint_toggle {
-    background-position: -200px 0;
-  }
-  .disable_paint .paint_toggle:hover {
-    background-position: -200px 0;
-    opacity: 0.8;
+    background-position: -75px 0;
   }
 
 .contact {
@@ -83,3 +78,13 @@ a {
   .contact a:hover {
     color: #f33;
   }
+
+.fb_link {
+  overflow: hidden;
+  width: 22px;
+  height: 22px;
+  background: url(../images/fb_link.png);
+  display: inline-block;
+  color: rgba(0,0,0,0);
+  background-size: 22px 22px;
+}

@@ -17,6 +17,7 @@
       <nav class="contact">
         <a href="mailto:booking@equippe.no">Contact us</a>
         <a href="mailto:booking@equippe.no">booking@equippe.no</a>
+        <a href="https://www.facebook.com/EQUIPPE.no" class="fb_link">Visit Our Facebook Page</a>
       </nav>
 
       <?php # Primary navigation ?>
@@ -45,13 +46,8 @@
           <?php foreach ($group as $subgroup_id => $subgroup) { ?>
             <?php foreach ($subgroup as $product) { ?>
               <div class="product_popup group<?php echo $group_id ?> subgroup<?php echo $subgroup_id ?>" id="<?php echo $product['id'] ?>">
-                <div class="image">
-                  <img src="<?php 
-                      if ($product['bilde2']) 
-                        echo "files/produkter_" . $product['id'] . "_2_normal." . $product['bilde2']; 
-                      else 
-                        echo "images/no_image.jpg" 
-                  ?>">
+                <div class="image" style="background-image: url(<?php echo $product['popup_image'] ?>)">
+                  <img src="<?php echo $product['popup_image'] ?>">
                 </div>
                 <h2><?php echo $product['navn'] ?></h2>
                 <div class="article">
@@ -70,13 +66,8 @@
           <?php foreach ($group as $subgroup_id => $subgroup) { ?>
             <?php foreach ($subgroup as $product) { ?>
               <a class="product group<?php echo $group_id ?> subgroup<?php echo $subgroup_id ?>" data-product-id="<?php echo $product['id'] ?>">
-                <div class="image">
-                  <img src="<?php 
-                    if ($product['bilde2']) 
-                      echo "files/produkter_" . $product['id'] . "_2_normal." . $product['bilde2']; 
-                    else 
-                      echo "images/no_image.jpg" 
-                    ?>">
+                <div class="image" style="background-image: url(<?php echo $product['category_image'] ?>)">
+                  <img src="<?php echo $product['category_image'] ?>">
                 </div>
                 <h3>
                   <?php echo $product['navn'] ?>
