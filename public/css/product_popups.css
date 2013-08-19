@@ -101,10 +101,15 @@
   line-height: 146px;
   font-weight: 600;
   z-index: 2;
+  text-indent: -1000px;
+  background-image: url(../images/close_x.png);
+  -webkit-background-size: 150px 150px;
+          background-size: 150px 150px;
+  overflow: hidden;
 }
   .product_popup .close:hover {
     color: white;
-    background: #d00;
+    background-color: #d00;
   }
 
 .product_popup .article p {
