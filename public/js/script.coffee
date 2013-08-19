@@ -1,18 +1,14 @@
 $ ->
   # Set up click handlers
+  $('.primary > .logo'     ).click handleLogoClick
   $('.primary > .logo > a' ).click handleLogoClick
   $('.primary > div:not(.logo):not(.studio) > a').click handleNavClick
   $('.secondary > a'       ).click handleSecondaryNavClick
   $('.product'             ).click handleProductClick
-  $('.product_popup .close').click closeProductPopup
+  $('.product_popup .close, #lightbox').click closeProductPopup
   $('.paint_toggle'        ).click handlePaintToggleClick
   $('.about_us'            ).click handleAboutUsClick
   $('.primary .studio a'   ).click handleStudioClick
-
-  initExpansionButtons()
-  # # Initialize submenus
-  # $('.secondary').each (i, secondaryNav) ->
-  #   secondaryNav.style.left = ((i + 1) * 160) + 'px'
 
 
 log = (str) -> console.log str
@@ -20,7 +16,7 @@ log = (str) -> console.log str
 
 handleLogoClick = (evt) ->
   clicked = evt.target
-
+  showAllArticles()
   return if $('.page_container').hasClass('home')
 
   closeProductPopup();
@@ -92,70 +88,92 @@ handleSecondaryNavClick = (evt) ->
   , 500)
 
 
+
+getOffset = (element) ->
+  if element == document.body
+    0
+  else
+    element.offsetTop + getOffset(element.parentNode)
+
+
 handleProductClick = (evt) ->
-  clicked = if evt.target.nodeName == 'A' then $(evt.target) else $(evt.target).parents('a.product')
-  openProductPopup clicked.attr('data-product-id'), clicked
+  $clicked = if evt.target.nodeName == 'A' then $(evt.target) else $(evt.target).parents('a.product')
+  clicked = $clicked.get(0)
+  windowOffset = getWindowScrollOffset(clicked)
+  openProductPopup $clicked.attr('data-product-id'), clicked.offsetTop, windowOffset
 
 
-openProductPopup = (productId, productElem) ->
+getWindowScrollOffset = (elem) ->
+  popupHeight     = 470
+
+  windowTop       = document.body.scrollTop
+  windowHeight    = window.innerHeight
+  windowBottom    = windowTop + windowHeight
+
+  verticalPadding = windowHeight - popupHeight
+  topPadding      = verticalPadding / 2
+
+  popupTop        = getOffset(elem)
+  popupBottom     = popupTop + popupHeight
+
+  isFullyVisible  = popupTop > windowTop && popupBottom < windowBottom
+
+  # If the popup will be fully visible, avoid unnecessary scrolling
+  if isFullyVisible
+    null
+  else
+    popupTop - topPadding
+
+
+openProductPopup = (productId, popupOffset, windowOffset) ->
   $('.product_popup.selected').removeClass('selected')
-  $('.products').addClass('hidden')
-  $('#' + productId).css('margin-top', productElem.get(0).offsetTop + 'px').addClass('selected')
+  $('.products').addClass('faded')
+  $('#' + productId).css('margin-top', popupOffset + 'px').addClass('selected')
+  if windowOffset
+    $('body').animate({ scrollTop: windowOffset }, 400)
+  $('#lightbox').addClass('active')
   $('.product_popups').removeClass('hidden')
+  initExpansionButton($('#' + productId))
 
 
 closeProductPopup = () ->
   $('.product_popups').addClass('hidden')
-  $('.products').removeClass('hidden')
+  $('.products').removeClass('faded')
+  $('#lightbox').removeClass('active')
 
 
 handlePaintToggleClick = (evt) ->
   $(document.body).toggleClass('disable_paint')
 
 
-# Insert buttons for the popup articles where it's necessary
-initExpansionButtons = ->
-  articles = $('.product_popup .article')
-  articles.each (i, article) ->
-    if article.children.length > 0
-      #lastChild = article.children[article.children.length - 1]
-      #articleHeight = getArticleHeight(article) #lastChild.clientHeight + lastChild.offsetTop
-      #log('article height is ' + articleHeight)
-      #if articleHeight > 340
-      insertExpansionButton article
-  # Attach click events to buttons
-  $('.product_popup .expand').click (evt) ->
-    clicked   = evt.target
-    $popup    = $(clicked.parentNode.parentNode)
-    article   = clicked.parentNode
-    #lastChild = article.children.length > 1 && article.children[article.children.length - 2]
-    #log 'height: ' + getArticleHeight(article)
-    articleHeight = getArticleHeight(article)
-    if !$popup.hasClass('expanded')
-      $(article).css('height', (articleHeight + 100) + 'px')#(lastChild.offsetTop + lastChild.clientHeight - 50) + 'px')
-    else
-      $(article).css('height', '')
-    $popup.css('min-height', (articleHeight + 400) + 'px')
-    $popup.toggleClass('expanded')
+initExpansionButton = (productPopup) ->
+  return if ($(productPopup).find('.expand').length > 0)
+
+  article = $(productPopup).find('.article')[0] 
+  articleHeight = getArticleHeight(article) #lastChild.clientHeight + lastChild.offsetTop
+  if articleHeight > 420
+    button = document.createElement('button')
+    button.className = 'expand'
+    button.innerHTML = 'EXPAND'
+    article.appendChild(button)
+    $(button).click handleExpand
 
 
-insertExpansionButton = (article) ->
-  button = document.createElement('button')
-  button.className = 'expand'
-  button.innerHTML = 'EXPAND'
-  article.appendChild(button)
+handleExpand = (evt) ->
+  clicked   = evt.target
+  $popup    = $(clicked.parentNode.parentNode)
+  article   = clicked.parentNode
+  articleHeight = getArticleHeight(article)
+  if !$popup.hasClass('expanded')
+    $(article).css('height', (articleHeight + 100) + 'px')#(lastChild.offsetTop + lastChild.clientHeight - 50) + 'px')
+  else
+    $(article).css('height', '')
+  $popup.css('min-height', (articleHeight + 400) + 'px')
+  $popup.toggleClass('expanded')
 
 
 getArticleHeight = (article) ->
-  lastChild = article.children.length > 0 && article.children[article.children.length - 1]
-  # log('--')
-  # log(article)
-  # log(article.children)
-  # log(lastChild)
-  #log(lastChild.offsetTop + '-' + lastChild.clientHeight)
-  if lastChild.nodeName == 'BUTTON'
-    lastChild = article.children.length > 1 && article.children[article.children.length - 2]
-  return lastChild.offsetTop + lastChild.clientHeight
+  return article.scrollHeight - 150
 
 
 handleAboutUsClick = (evt) ->
@@ -167,7 +185,7 @@ handleStudioClick = (evt) ->
   # log "CICKED MED"
   evt.preventDefault()
   evt.stopPropagation()
-  showArticle(91)
+  showArticle(97)
 
 
 showArticle = (articleId) ->
@@ -178,3 +196,7 @@ showArticle = (articleId) ->
   $('html, body').animate({
     scrollTop: $('#article_' + articleId).offset().top - 110
   }, 500);
+
+
+showAllArticles = () ->
+  $('.blog_content article').removeClass('hidden')

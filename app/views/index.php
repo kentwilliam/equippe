@@ -1,23 +1,30 @@
+<?php
+header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+$version = 3;
+?>
 <!DOCTYPE html>
 <html>
   <head>
-    <?php #<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> ?>
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link rel="stylesheet" href="css/navigation.css" type="text/css">
-    <link rel="stylesheet" href="css/product.css" type="text/css">
-    <link rel="stylesheet" href="css/product_popups.css" type="text/css">
-    <link rel="stylesheet" href="css/blog_content.css" type="text/css">
+    <title>Equippe - Utleie av digitale filmkamera, pl-optikk, lys, studio og annet filmutstyr til din produksjon.</title>
+    <meta description="Equippe tilbyr filmutstyr, RED-kameraer, studio, grip og lys til din filmproduksjon. Equippe provides film equipment, RED cameras, studio, grip and lighting for your film production.">
+    <meta keywords="Equipe, filmutstyr, redutleie, red, filmutstyrsutleie, kamerautleie, filmutstyrutleie, studioleie, studioutleie, filmkamera, grimstad, film, filmlys, griputleie, epic, dragon">
+    <link rel="stylesheet" href="css/main.css?<?php echo $version ?>" type="text/css">
+    <link rel="stylesheet" href="css/navigation.css?<?php echo $version ?>" type="text/css">
+    <link rel="stylesheet" href="css/product.css?<?php echo $version ?>" type="text/css">
+    <link rel="stylesheet" href="css/product_popups.css?<?php echo $version ?>" type="text/css">
+    <link rel="stylesheet" href="css/blog_content.css?<?php echo $version ?>" type="text/css">
     <script src="js/jquery-1.9.1.js"></script>
   </head>
 
   <body>
-
     <div class="page_container home">
 
       <nav class="contact">
-        <a href="/about" class="about_us">About Us</a>
-        <a href="mailto:booking@equippe.no">booking@equippe.no</a>
-        <a href="https://www.facebook.com/EQUIPPE.no" class="fb_link">Visit Our Facebook Page</a>
+        <a class="about_us" href="/about">About Us</a>
+        <a class="booking" href="mailto:booking@equippe.no">booking@equippe.no</a>
+        <a class="phone" href="tel:+4794792068">+47 94 79 20 68</a>
+        <a class="fb_link" href="https://www.facebook.com/EQUIPPE.no" target="_blank">Visit Our Facebook Page</a>
         <a class="paint_toggle"></a>
       </nav>
 
@@ -99,7 +106,24 @@
 
     </div>
 
-    <script src="js/script.js"></script>
+    <div id="lightbox"></div>
+
+    <script src="js/script.js?<?php echo $version ?>"></script>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-21553046-4']);
+      _gaq.push(['_setDomainName', 'equippe.no']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
   </body>
 
 </html>

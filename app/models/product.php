@@ -4,6 +4,7 @@
 require_once("db.php");
 
 function get_products_and_group_index() {
+  /*
   $main_categories = array(
     1  => 'camera',
     5  => 'lenses',
@@ -11,6 +12,15 @@ function get_products_and_group_index() {
     19 => 'light_grip',
     3  => 'grip', # grip, stands and dolly
     40 => 'sound'
+  ); 
+  */
+  $main_categories = array(
+    1  => 'camera',
+    41 => 'lenses',
+    2  => 'light',
+    19 => 'light_grip',
+    3  => 'grip', # grip, stands and dolly
+    42 => 'sound'
   ); 
   $products_query = '
     SELECT
