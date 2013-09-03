@@ -165,9 +165,12 @@ handleExpand = (evt) ->
   article   = clicked.parentNode
   articleHeight = getArticleHeight(article)
   if !$popup.hasClass('expanded')
-    $(article).css('height', (articleHeight + 100) + 'px')#(lastChild.offsetTop + lastChild.clientHeight - 50) + 'px')
+    $(article).css('height', (articleHeight + 100) + 'px')
   else
     $(article).css('height', '')
+    scrollTo = getWindowScrollOffset($popup[0])
+    if scrollTo
+      $('body').animate({ scrollTop: scrollTo }, 300)
   $popup.css('min-height', (articleHeight + 400) + 'px')
   $popup.toggleClass('expanded')
 
@@ -182,7 +185,6 @@ handleAboutUsClick = (evt) ->
 
 
 handleStudioClick = (evt) ->
-  # log "CICKED MED"
   evt.preventDefault()
   evt.stopPropagation()
   showArticle(97)
@@ -191,6 +193,7 @@ handleStudioClick = (evt) ->
 showArticle = (articleId) ->
   # Hide every article but the relevant one
   $('.blog_content article:not(#article_' + articleId + ')').addClass('hidden')
+  $('#article_' + articleId).removeClass('hidden')
 
   # Scroll to show article
   $('html, body').animate({

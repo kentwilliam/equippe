@@ -175,7 +175,7 @@
   };
 
   handleExpand = function(evt) {
-    var $popup, article, articleHeight, clicked;
+    var $popup, article, articleHeight, clicked, scrollTo;
 
     clicked = evt.target;
     $popup = $(clicked.parentNode.parentNode);
@@ -185,6 +185,12 @@
       $(article).css('height', (articleHeight + 100) + 'px');
     } else {
       $(article).css('height', '');
+      scrollTo = getWindowScrollOffset($popup[0]);
+      if (scrollTo) {
+        $('body').animate({
+          scrollTop: scrollTo
+        }, 300);
+      }
     }
     $popup.css('min-height', (articleHeight + 400) + 'px');
     return $popup.toggleClass('expanded');
@@ -207,6 +213,7 @@
 
   showArticle = function(articleId) {
     $('.blog_content article:not(#article_' + articleId + ')').addClass('hidden');
+    $('#article_' + articleId).removeClass('hidden');
     return $('html, body').animate({
       scrollTop: $('#article_' + articleId).offset().top - 110
     }, 500);
